@@ -21,3 +21,11 @@ https://asciinema.org/a/K3adywAuQtfnRrWKqMR5cqppY
 Queues
 
 https://asciinema.org/a/Kj82pKqFojhjIOEAkx5RyRNBw
+
+Stacks
+
+https://asciinema.org/a/jijcU98TrKEUfUBbncpFar1Sa
+
+Trees
+
+https://asciinema.org/a/9nAs3jaz4JhcqkdVLBmgVlGrP
