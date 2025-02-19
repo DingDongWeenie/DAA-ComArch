@@ -20,16 +20,17 @@ The following data structures are included:
 
 
 ## 1. Singly Linked List
-The Singly Linked List is also created in its own class. This list stores references to the next node only. It contains:
+The Singly Linked List stores items where each one points only to the next item.
 
-- The `insert_end` method, which adds data to the end of the list.
-- The `insert_beginning` method, which inserts data at the start of the list.
-- The `insert_at` method, which inserts at a given position.
-- The `search` method, which looks for a value.
-- The `__str__` method, which displays all nodes in the list.
+- The `insert_end` method adds an item to the end of the list.
+- The `insert_beginning` method adds an item at the start.
+- The `insert_at` method inserts an item at a specific position.
+- The `search` method looks for an item.
+- The `__str__` method displays all items from start to end.
 
-The simplicity of singly linked lists makes them easy to work with.
-
+### Example Use:
+This is ideal for scenarios like navigating through a to-do list or any single-direction task list.
+### Asciinema:
 - [SinglyList Asciinema](https://asciinema.org/a/XnPv5RothJG6UW8gP80BVEgYo)
 
 ### Quick Code Snippet:
@@ -58,17 +59,23 @@ class Singlylist:
 ```
 
 
+
+
+
+
+---
 ## 2. Doubly Linked List
-The Doubly Linked List is created in a separate class for encapsulation and easy use. A doubly linked list allows each node to store references to the next and previous nodes. This means you can traverse the list both forwards and backwards.
+The Doubly Linked List that I wrote stores items that are connected to both their previous and next items, making it easy to move in both directions. 
 
-- The `insert_end` method adds data to the end of the list.
-- The `insert_beginning` method inserts data at the start.
-- The `insert_at` method inserts data at a specified position.
-- The `search` method looks for a specific value in the list.
-- The `__str__` method displays all the elements in the list.
+- The `insert_end` method adds an item to the end of the list.
+- The `insert_beginning` method adds an item at the start.
+- The `insert_at` method inserts at a specific position.
+- The `search` method looks for an item.
+- The `__str__` method displays all the items.
 
-This allows flexibility and easy traversal of the list.
-
+### Example Use:
+This is useful for things like undo/redo functions or navigating a playlist where you can go both forward and backward.
+### Asciinema:
 - [DoublyList Asciinema](//asciinema.org/a/vV8qPC0ez6Fho7Z0PQ7XW4omz)
 
 ### Quick Code Snippet:
@@ -107,17 +114,24 @@ dll.insert_end(40)
 print(dll)
 ```
 
-CirclyList
-The Circular Linked List is similar to a singly linked list, but its last node points back to the first node, creating a loop:
 
-- The `insert_end` method adds elements to the end of the circular list.
-- The `insert_beginning` method adds elements at the start.
-- The `insert_at` method inserts elements at a specific position.
-- The `search` method checks if a value exists in the list.
-- The `__str__` method displays all elements, looping back to the head.
 
-Circular linked lists are useful for looping scenarios.
 
+
+
+---
+## 3. Circular Linked List
+The Circular Linked List is similar to a singly linked list, but the last item connects back to the first item, forming a loop.
+
+- The `insert_end` method adds an item to the end.
+- The `insert_beginning` method adds an item at the start.
+- The `insert_at` method inserts an item at a specific position.
+- The `search` method checks if an item is in the list.
+- The `__str__` method displays all the items in the loop.
+
+### Example Use:
+This is useful for things like round-robin scheduling or board games where turns rotate in a circle.
+### Asciinema:
 - [CirclyList Asciinema](https://asciinema.org/a/lpJWtT0zq2ugrubVJvszkVgd7)
 
 ### Quick Code Snippet:
@@ -150,22 +164,199 @@ class circlylist:
                 break
         return " -> ".join(nodes) + " -> head"
 ```
-Graphs
 
-https://asciinema.org/a/hp9YdRqrk1JOQKvYVMGqMtLxY
 
-Heaps
 
-https://asciinema.org/a/K3adywAuQtfnRrWKqMR5cqppY
 
-Queues
 
-https://asciinema.org/a/Kj82pKqFojhjIOEAkx5RyRNBw
 
-Stacks
+---
+## 4. Graphs
+The Graph I wrote represents connections between items (nodes).
 
-https://asciinema.org/a/jijcU98TrKEUfUBbncpFar1Sa
+- The `add_node` method adds new nodes.
+- The `add_edge` method connects two nodes.
+- The `__str__` method shows all the nodes and their connections.
 
-Trees
+### Example Use:
+Graphs are great for representing social networks, maps, or recommendation systems.
+### Asciinema:
+- [Graphs Asciinema](https://asciinema.org/a/hp9YdRqrk1JOQKvYVMGqMtLxY)
 
-https://asciinema.org/a/9nAs3jaz4JhcqkdVLBmgVlGrP
+### Quick Code Snippet:
+```python
+class Graphs:
+    def __init__(self):
+        self.adj_list = {}
+
+    def add_node(self, node):
+        if node not in self.adj_list:
+            self.adj_list[node] = []
+
+    def add_edge(self, node1, node2):
+        self.add_node(node1)
+        self.add_node(node2)
+        self.adj_list[node1].append(node2)
+        self.adj_list[node2].append(node1)
+
+    def __str__(self):
+        return "\n".join(f"{node}: {neighbors}" for node, neighbors in self.adj_list.items())
+
+```
+
+
+
+
+
+
+---
+## 5. Heaps
+I implemented a Min Heap, where the smallest item is always at the top.
+
+- The `push` and `insert` methods add items while keeping the heap sorted.
+- The `pop` method removes and returns the smallest item.
+- The `peek` method shows the smallest item without removing it.
+- The `__str__` method displays all the items.
+
+### Example Use:
+Heaps are useful for priority queues or for finding the smallest elements in a set of data.
+### Asciinema:
+- [Heaps Asciinema](https://asciinema.org/a/K3adywAuQtfnRrWKqMR5cqppY)
+
+### Quick Code Snippet:
+```python
+class MinHeap:
+    def __init__(self):
+        self.heap = []
+
+    def push(self, item):
+        self.heap.append(item)
+        self._heapify_up(len(self.heap) - 1)
+
+    def pop(self):
+        if not self.heap:
+            return None
+        self._swap(0, len(self.heap) - 1)
+        item = self.heap.pop()
+        self._heapify_down(0)
+        return item
+
+    def __str__(self):
+        return "Heap: " + ", ".join(map(str, self.heap))
+```
+
+
+
+
+
+---
+## 6. Queues
+The Queue follows the "first in, first out" (FIFO) rule. The first item added is the first one removed.
+
+- The `enqueue` method adds an item to the queue.
+- The `dequeue` method removes and returns the first item.
+- The `is_empty` method checks if the queue is empty.
+- The `__str__` method displays all the items.
+
+### Example Use:
+Queues are great for customer service lines or managing tasks in order of arrival.
+### Asciinema:
+- [Queues Asciinema](https://asciinema.org/a/Kj82pKqFojhjIOEAkx5RyRNBw)
+
+### Quick Code Snippet:
+```python
+class Queues:
+    def __init__(self):
+        self.items = []
+
+    def enqueue(self, item):
+        self.items.append(item)
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        return self.items.pop(0)
+
+    def __str__(self):
+        return "Queue: " + " -> ".join(map(str, self.items))
+
+```
+
+
+
+
+
+---
+## 7. Stacks
+The Stack follows the "last in, first out" (LIFO) rule. The last item added is the first one removed.
+
+- The `push` method adds an item to the stack.
+- The `pop` method removes and returns the last item.
+- The `peek` method shows the last item without removing it.
+- The `is_empty` method checks if the stack is empty.
+- The `__str__` method displays all the items.
+
+### Example Use:
+Stacks are perfect for browser history (going back to the last page) or undo features in apps.
+### Asciinema:
+- [Stacks Asciinema](https://asciinema.org/a/jijcU98TrKEUfUBbncpFar1Sa)
+
+### Quick Code Snippet:
+```python
+class Stacks:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if self.is_empty():
+            return None
+        return self.items.pop()
+
+    def __str__(self):
+        return "Stack: " + " -> ".join(map(str, self.items))
+```
+
+
+
+
+
+---
+## 8. Trees
+The Tree I wrote is a binary search tree (BST), where each item has left and right children.
+
+- The `insert` method adds items to the tree. Smaller items go to the left, and larger items go to the right.
+- The `in_order` method shows all items in sorted order.
+- The `__str__` method displays the tree in order.
+
+### Example Use:
+Trees are useful for organizing data in file systems or for search engines to quickly find information.
+### Asciinema:
+- [Graphs Asciinema](https://asciinema.org/a/9nAs3jaz4JhcqkdVLBmgVlGrP)
+
+### Quick Code Snippet:
+```python
+class Trees:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        if not self.root:
+            self.root = TreeNode(data)
+        else:
+            self._insert(self.root, data)
+
+    def _insert(self, node, data):
+        if data < node.data:
+            if node.left:
+                self._insert(node.left, data)
+            else:
+                node.left = TreeNode(data)
+        else:
+            if node.right:
+                self._insert(node.right, data)
+            else:
+                node.right = TreeNode(data)
+```
