@@ -13,3 +13,7 @@ https://asciinema.org/a/lpJWtT0zq2ugrubVJvszkVgd7
 Graphs
 
 https://asciinema.org/a/hp9YdRqrk1JOQKvYVMGqMtLxY
+
+Heaps
+
+https://asciinema.org/a/K3adywAuQtfnRrWKqMR5cqppY
