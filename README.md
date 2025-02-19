@@ -1,4 +1,4 @@
-# Data Structures Implementations
+# Data Structures
 
 This repo contains various fundamental data structures in Python. 
 The following data structures are included:
