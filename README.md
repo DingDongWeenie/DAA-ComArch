@@ -9,3 +9,7 @@ https://asciinema.org/a/vV8qPC0ez6Fho7Z0PQ7XW4omz
 CirclyList
 
 https://asciinema.org/a/lpJWtT0zq2ugrubVJvszkVgd7
+
+Graphs
+
+https://asciinema.org/a/hp9YdRqrk1JOQKvYVMGqMtLxY
