@@ -17,3 +17,7 @@ https://asciinema.org/a/hp9YdRqrk1JOQKvYVMGqMtLxY
 Heaps
 
 https://asciinema.org/a/K3adywAuQtfnRrWKqMR5cqppY
+
+Queues
+
+https://asciinema.org/a/Kj82pKqFojhjIOEAkx5RyRNBw
